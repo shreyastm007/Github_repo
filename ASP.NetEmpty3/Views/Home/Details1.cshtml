@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ASP.NetEmpty3.Model.Employee>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+
+    @foreach (var employee in Model) {
+        <div class="card text-dark bg-warning mb-3" style="max-width: 25rem;">
+            <div class="card-header"><h1>Employee Details </h1></div>
+
+            <div class="card-body">
+                <img class="card-img-top" src="~/images/4.png" />
+                <h5> Id: @employee.id</h5>
+                <h5> Age: @employee.age</h5>
+                <h5>Name: @employee.name</h5>
+            </div>
+
+            <div class="card-footer bg-transparent border-dark">
+                <div class="card-footer text-center">
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@employee.id" class="btn btn-warning">View</a>
+                    <button class="btn btn-primary">UPDATE </button>
+                    <button class="btn btn-success"> DELETE</button>
+                    <button class="btn btn-dark"> DONE</button>
+                </div>
+            </div>
+
+        </div>
+    }
+
+
+
+    @*@foreach (var employee in Model) {
+            <div class="card text-dark bg-info mb-3" style="max-width: 30rem;">
+                <div class="card-header">Employee Details</div>
+
+                <div class="card-body">
+                    <img class="card-img-top" src="~/images/4.png" />
+                    <h5> Age: @Model.Employee.age</h5>
+                    <h5> Id:@Model.Employee.id</h5>
+                    <h5> Name: @Model.Employee.name</h5>
+
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success"> VIEW</button>
+                    <button class="btn btn-primary">UPDATE </button>
+                    <button class="btn btn-danger"> DELETE</button>
+                    <button class="btn btn-dark"> DONE</button>
+                </div>
+            </div>
+        }*@
+
+</body>
+</html>
+
